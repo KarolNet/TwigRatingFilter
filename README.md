@@ -1,6 +1,10 @@
+Description
+--------
+
 Karolnet RatingFilter is simple twig filter to generate stars rating from number
 
-Instalation:
+Installation
+------------
 
 composer require karolnet/rating-filter
 
