@@ -1,0 +1,15 @@
+{
+    "name": "karolnet/rating-filter",
+    "description": "Rating filter for twig",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Grochowalski",
+            "email": "karol.grochowalski@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": ">=5.3.3"
+    }
+}
