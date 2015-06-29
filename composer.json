@@ -2,6 +2,7 @@
     "name": "karolnet/rating-filter",
     "description": "Rating filter for twig",
     "license": "MIT",
+    "type": "symfony-bundle",
     "authors": [
         {
             "name": "Karol Grochowalski",
@@ -11,5 +12,10 @@
     "minimum-stability": "dev",
     "require": {
       "php": ">=5.3.3"
+    },
+    "autoload": {
+      "psr-0": {
+        "RatingFilterBundle": "RatingFilterBundle/"
+      }
     }
 }
