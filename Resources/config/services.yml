@@ -1,0 +1,14 @@
+parameters:
+    max_rating: 10;
+    star_full_template: '<i class="fa fa-star fa-2xx" style="color: #f6d20b"></i>'
+    set_star_half_empty_template: '<i class="fa fa-star-half-o fa-2xx" style="color: #f6d20b "></i>'
+    set_star_empty: '<i class="fa fa-star fa-2xx" style="color: #FFFF80"></i>'
+
+services:
+    karol_net.twig_extension.rating:
+        class: KarolNet\RatingFilterBundle\Twig\RatingExtension
+        public: false
+        arguments:
+            - "%rating_filter%"
+        tags:
+            - { name: twig.extension }
