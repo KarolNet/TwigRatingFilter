@@ -40,9 +40,7 @@ class RatingExtension extends \Twig_Extension
 
             if ($rating <  $count) {
                 $output = $output . $this->starEmpty;
-            } elseif($rating ==  $count) {
-                $output = $output . $this->starHalfEmpty;
-            }else {
+            } else {
                 $output = $output . $this->starFull;
             }
         }
