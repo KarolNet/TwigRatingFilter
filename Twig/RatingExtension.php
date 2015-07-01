@@ -38,7 +38,7 @@ class RatingExtension extends \Twig_Extension
 
         for($count = 0; $count < $this->maxRate; $count++) {
 
-            if ($rating <  $count) {
+            if ($rating <=  $count) {
                 $output = $output . $this->starEmpty;
             } else {
                 $output = $output . $this->starFull;
