@@ -8,6 +8,12 @@ Installation
 
 composer require karolnet/rating-filter
 
-add bundle to AppKernel
+add bundle to AppKernel:
+  new \KarolNet\TwigRatingFilterBundle\KarolNetTwigRatingFilterBundle()
 
-configure if you want
+configure if you want:
+  karol_net_twig_rating_filter:
+    max_rating: 5
+    star_full_template: '<img src="/ico.png">'
+    set_star_half_empty_template: ''
+    set_star_empty: '
