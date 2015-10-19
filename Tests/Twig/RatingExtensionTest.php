@@ -6,7 +6,7 @@ class RatingExtensionTest extends \PHPUnit_Framework_TestCase
 {
     public function testRating()
     {
-        $configuration = [
+        $configuration['templates']['default'] = [
             'max_rating' => 20,
             'star_full_template' => 'ful_',
             'set_star_half_empty_template' => 'half_',
@@ -19,5 +19,15 @@ class RatingExtensionTest extends \PHPUnit_Framework_TestCase
         $ratingFilter = new RatingExtension($configuration);
         $result = $ratingFilter->showRating($rating);
         $this->assertEquals($result, $exampleSuccessResult);
+    }
+
+    /**
+     * @expectedException  KarolNet\TwigRatingFilterBundle\Exception\RatingFilterConfigurationNotFoundException
+     */
+    public function testEmptyConfiguration()
+    {
+        $configuration['templates'] = [];
+        $ratingFilter = new RatingExtension($configuration);
+        $ratingFilter->showRating(5);
     }
 }

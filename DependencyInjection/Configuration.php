@@ -21,21 +21,19 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('rating_filter');
 
         $rootNode
+
             ->children()
-                ->integerNode('max_rating')
-                    ->defaultValue(5)
+                ->arrayNode('templates')
+                    ->prototype('array')
+                        ->children('default')
+                            ->scalarNode('max_rating')->defaultValue(5)->end()
+                            ->scalarNode('star_full_template')->defaultValue('<i class="fa fa-star fa-2xx" style="color: #f6d20b"></i>')->end()
+                            ->scalarNode('set_star_half_empty_template')->defaultValue('<i class="fa fa-star fa-2xx" style="color: #f6d20b"></i>')->end()
+                            ->scalarNode('set_star_empty')->defaultValue('<i class="fa fa-star fa-2xx" style="color: #FFFF80"></i>')->end()
+                        ->end()
+                    ->end()
                 ->end()
-                ->scalarNode('star_full_template')
-                    ->defaultValue('<i class="fa fa-star fa-2xx" style="color: #f6d20b"></i>')
-                ->end()
-                ->scalarNode('set_star_half_empty_template')
-                    ->defaultValue('<i class="fa fa-star-half-o fa-2xx" style="color: #f6d20b "></i>')
-                ->end()
-                ->scalarNode('set_star_empty')
-                   ->defaultValue('<i class="fa fa-star fa-2xx" style="color: #FFFF80"></i>')
-                ->end()
-            ->end()
-        ;
+            ->end();
 
         return $treeBuilder;
     }

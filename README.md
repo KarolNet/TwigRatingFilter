@@ -20,8 +20,14 @@ new \KarolNet\TwigRatingFilterBundle\KarolNetTwigRatingFilterBundle()
 configure if you want:
 ```
   karol_net_twig_rating_filter:
-    max_rating: 5
-    star_full_template: '<img src="/ico.png">'
-    set_star_half_empty_template: ''
-    set_star_empty: ''
+          templates:
+                  default:
+                  red:
+                        star_full_template: '<i class="fa fa-star fa-2xx" style="color: red"></i>'
+```
+
+Usage:
+```
+   {{ 3 | rating }}. {# default template #}
+   {{ 4 | rating('red') }} {# red template #}
 ```
